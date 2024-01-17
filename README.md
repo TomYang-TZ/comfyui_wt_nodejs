@@ -1,4 +1,4 @@
-ComfyUI
+ComfyUI. Original codes from https://github.com/comfyanonymous/ComfyUI
 =======
 The most powerful and modular stable diffusion GUI and backend.
 -----------
