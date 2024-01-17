@@ -15,6 +15,12 @@ class ComfyApi extends EventTarget {
 		return fetch(this.apiURL(route), options);
 	}
 
+	fetchNodeApi(route, options) {
+		const apiurl = 'http://' + location.host.split(':')[0] + ':3000/';
+		console.log('fetchNodeApi', apiurl + route, options);
+		return fetch(apiurl + route, options);
+	}
+
 	addEventListener(type, callback, options) {
 		super.addEventListener(type, callback, options);
 		this.#registered.add(type);
@@ -315,6 +321,7 @@ class ComfyApi extends EventTarget {
 	async interrupt() {
 		await this.#postItem("interrupt", null);
 	}
+	
 }
 
 export const api = new ComfyApi();
